@@ -173,7 +173,7 @@ release() {
     git clone https://review.coreboot.org/coreboot.git release/coreboot
     cd release/coreboot
     git submodule update --init --checkout
-    git remote add pcengines https://github.com/pcengines/coreboot.git
+    git remote add pcengines https://gitlab.com/3mdeb/pcengines/coreboot
     git fetch pcengines
     # fetch tags additionally, sometimes git fetch does not find all revisions
     git fetch pcengines -t
