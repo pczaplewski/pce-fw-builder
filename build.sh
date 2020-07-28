@@ -160,7 +160,7 @@ dev_build() {
     fi
 
 }
-
+$GITLAB_ROBOT_USERNAME:$GITLAB_ROBOT_TOKEN
 release() {
     if [ -d release ]; then
         sudo rm -rf release
@@ -173,7 +173,7 @@ release() {
     git clone https://review.coreboot.org/coreboot.git release/coreboot
     cd release/coreboot
     git submodule update --init --checkout
-    git remote add pcengines https://gitlab.com/3mdeb/pcengines/coreboot.git
+    git remote add pcengines https://$GITLAB_ROBOT_USERNAME:$GITLAB_ROBOT_TOKEN@gitlab.com/3mdeb/pcengines/coreboot.git
     git fetch pcengines
     # fetch tags additionally, sometimes git fetch does not find all revisions
     git fetch pcengines -t
